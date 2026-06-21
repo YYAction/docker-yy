@@ -1,8 +1,24 @@
-services:
-  my-redis:
-    image: redis
+# ~/docker-lab/compose-test/docker-compose.yml
 
-  my-nginx:
+services:
+  nginx:
     image: nginx
     ports:
-      - "9091:80"
+      - "8080:80"
+    volumes:
+      - ./nginx/html:/usr/share/nginx/html
+
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - ./redis-data:/data
+
+  activemq:
+    image: apache/activemq-classic
+    ports:
+      - "8161:8161"    # 管理后台
+      - "61616:61616"  # 消息端口
+    volumes:
+      - ./activemq-data:/opt/activemq/data
