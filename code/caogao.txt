@@ -1,0 +1,40 @@
+/****** Script for SelectTopNRows command from SSMS  ******/
+SELECT TOP 1000 [Id]
+      ,[EventFlowId]
+      ,[EventId]
+      ,[EventDatetime]
+      ,[FlowType]
+      ,[EventLevel]
+      ,[ColorLevel]
+      ,[PreventionLevel]
+      ,[ModuleType]
+      ,[SourceType]
+      ,[SourceID]
+      ,[SourceName]
+      ,[SourceID1]
+      ,[SourceName1]
+      ,[SourceID2]
+      ,[SourceName2]
+      ,[IsCompleted]
+      ,[Note]
+      ,[Creator]
+      ,[CreationTime]
+      ,[CreatorName]
+      ,[ExtendedParameter]
+      ,[AdditionalInfo]
+  FROM [DragnetSecurityFlow].[dbo].[GeneralEventFlow202509]
+  
+  select * into [DragnetSecurityFlow].[dbo].[GeneralEventFlow202604] from [DragnetSecurityFlow].[dbo].[GeneralEventFlow202509] where 1=0;
+
+
+我：卢工，安保一体化流媒体要是加监控，可以监测哪些参数？进程监控是已经加了的
+卢：可以监控流量大小吧
+卢：小于 5M 每秒就告警
+我：那种流媒体异常的情况一般是怎么了呢？就是小于5M每秒吗？这种情况要运维就是重启对应的流媒体吧？
+卢：好像也不是，流量也不会断
+卢：能不能检测日志打印呢
+我：不确定，也许可以？异常的时候日志打印一般会显示什么呢？
+卢：不打印
+我：就是日志中断吗？
+卢：是的
+我：好的，那我根据这个试着加下监控，谢谢了

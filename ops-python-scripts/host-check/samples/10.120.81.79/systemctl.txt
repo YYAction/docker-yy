@@ -1,0 +1,10 @@
+● lwops_agentd.service - Lwops Agent
+   Loaded: loaded (/usr/lib/systemd/system/lwops_agentd.service; enabled; vendor preset: disabled)
+   Active: active (running) since Mon 2026-01-05 15:05:08 CST; 5 months 1 days ago
+ Main PID: 2573580 (lwops_agentd)
+    Tasks: 41
+   Memory: 35.2M
+   CGroup: /system.slice/lwops_agentd.service
+           └─2573580 /usr/local/lwops/sbin/lwops_agentd -c /usr/local/lwops/etc/lwops_agentd.conf
+
+Warning: Journal has been rotated since unit was started. Log output is incomplete or unavailable.

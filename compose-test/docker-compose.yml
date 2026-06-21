@@ -1,0 +1,8 @@
+services:
+  my-redis:
+    image: redis
+
+  my-nginx:
+    image: nginx
+    ports:
+      - "9091:80"

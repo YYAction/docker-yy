@@ -1,0 +1,13 @@
+文件系统               容量  已用  可用 已用% 挂载点
+devtmpfs                16G     0   16G    0% /dev
+tmpfs                   16G   24M   16G    1% /dev/shm
+tmpfs                   16G  1.6G   14G   10% /run
+tmpfs                   16G     0   16G    0% /sys/fs/cgroup
+/dev/mapper/klas-root   62G   16G   47G   25% /
+/dev/vda1             1014M  303M  712M   30% /boot
+/dev/vdb1              690G   26G  664G    4% /mnt/T3_Airport
+tmpfs                   16G  872K   16G    1% /tmp
+tmpfs                   60M     0   60M    0% /var/log/rtlog
+tmpfs                  3.1G     0  3.1G    0% /run/user/991
+tmpfs                  3.1G     0  3.1G    0% /run/user/0
+tmpfs                  3.1G     0  3.1G    0% /run/user/68
