@@ -1,4 +1,4 @@
-name: CI
+name: Log Scan CI
 
 on:
   push:
@@ -18,15 +18,18 @@ jobs:
           python-version: "3.12"
 
       - name: Check Python syntax
+        working-directory: log-scan
         run: python -m py_compile log_scan.py
 
       - name: Build Docker image
+        working-directory: log-scan
         run: docker build -t log-scan:test .
 
       - name: Run container smoke test
+        working-directory: log-scan
         run: |
           docker run --rm \
-            -v "${{ github.workspace }}/sample_logs:/logs:ro" \
+            -v "${{ github.workspace }}/log-scan/sample_logs:/logs:ro" \
             log-scan:test \
             --file /logs \
             --lines 500
