@@ -1,4 +1,7 @@
-FROM python:3.13-slim AS base
-COPY log_scan.py /code/log_scan.py
-RUN pip install flask
-CMD [ "python", "/code/log_scan.py" ]
+FROM python:3.12-slim
+
+WORKDIR /app
+
+COPY log_scan.py /app/log_scan.py
+
+ENTRYPOINT ["python", "/app/log_scan.py"]
