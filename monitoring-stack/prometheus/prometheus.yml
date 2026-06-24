@@ -1,0 +1,10 @@
+scrape_configs:
+  # Prometheus 监控自己
+  - job_name: "prometheus"
+    static_configs:
+      - targets: ["prometheus:9090"]
+
+  # node_exporter 暴露主机指标（CPU、内存、磁盘、网络）
+  - job_name: "node"
+    static_configs:
+      - targets: ["node-exporter:9100"]
